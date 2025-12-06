@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct BucketListApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BucketListView()
+                .modelContainer(for: Goal.self)
         }
+    }
+    
+    init(){
+        print(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }
